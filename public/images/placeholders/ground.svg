@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<rect width="1200" height="900" fill="#2E8B57"/>
+<rect width="1200" height="300" fill="#3FA06A"/>
+<g fill="#26774A"><circle cx="90" cy="520" r="70"/><circle cx="1110" cy="640" r="90"/><circle cx="60" cy="800" r="60"/></g>
+<polygon points="120,880 1080,880 880,300 320,300" fill="#C9D4D1"/>
+<g stroke="#FFFFFF" stroke-width="3" fill="none">
+<path d="M120 880L320 300M280 880L413 300M440 880L507 300M600 880V300M760 880L693 300M920 880L787 300M1080 880L880 300"/>
+<path d="M120 880H1080M165 750H1035M203 640H997M234 550H966M261 470H939M282 410H918M299 360H901M313 320H887"/>
+</g>
+<g fill="#FFFFFF" stroke="#8FA39D" stroke-width="3"><ellipse cx="470" cy="760" rx="60" ry="24"/><ellipse cx="730" cy="760" rx="60" ry="24"/><ellipse cx="600" cy="560" rx="38" ry="15"/></g>
+<g fill="#0B2420"><circle cx="400" cy="745" r="10"/><circle cx="540" cy="745" r="10"/><circle cx="660" cy="745" r="10"/><circle cx="800" cy="745" r="10"/></g>
+<g fill="#F29A2E"><polygon points="170,860 190,860 180,830"/><polygon points="1010,860 1030,860 1020,830"/></g>
+</svg>

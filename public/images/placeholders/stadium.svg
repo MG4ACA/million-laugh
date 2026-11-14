@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#04171A"/><stop offset="1" stop-color="#14564A"/></linearGradient>
+<radialGradient id="glow"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="900" fill="url(#sky)"/>
+<g fill="#FFFFFF" fill-opacity="0.7"><circle cx="150" cy="90" r="3"/><circle cx="330" cy="150" r="2"/><circle cx="520" cy="70" r="3"/><circle cx="760" cy="120" r="2"/><circle cx="1010" cy="80" r="3"/><circle cx="1100" cy="200" r="2"/></g>
+<g stroke="#F29A2E" stroke-width="6" stroke-linecap="round"><path d="M300 230V170M300 230L260 190M300 230L340 190M300 230L250 230M300 230L350 230M300 230L265 270M300 230L335 270"/><path d="M900 200V140M900 200L860 160M900 200L940 160M900 200L850 200M900 200L950 200M900 200L865 240M900 200L935 240"/></g>
+<ellipse cx="600" cy="620" rx="570" ry="230" fill="#08241F"/>
+<ellipse cx="600" cy="620" rx="500" ry="190" fill="#103B33"/>
+<ellipse cx="600" cy="620" rx="535" ry="210" fill="none" stroke="#F29A2E" stroke-opacity="0.8" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 20"/>
+<ellipse cx="600" cy="620" rx="470" ry="176" fill="none" stroke="#7FD6C2" stroke-opacity="0.8" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 18"/>
+<ellipse cx="600" cy="630" rx="400" ry="140" fill="#1B7A5A"/>
+<ellipse cx="600" cy="630" rx="300" ry="100" fill="#2E9E73"/>
+<rect x="584" y="590" width="32" height="82" fill="#E9D9A8"/>
+<g fill="#1D3F38"><rect x="95" y="260" width="12" height="330"/><rect x="1093" y="260" width="12" height="330"/><rect x="380" y="330" width="10" height="240"/><rect x="810" y="330" width="10" height="240"/></g>
+<g fill="#FFFFFF"><rect x="62" y="236" width="78" height="30"/><rect x="1060" y="236" width="78" height="30"/><rect x="351" y="312" width="68" height="26"/><rect x="781" y="312" width="68" height="26"/></g>
+<circle cx="101" cy="250" r="110" fill="url(#glow)"/><circle cx="1099" cy="250" r="110" fill="url(#glow)"/><circle cx="385" cy="325" r="90" fill="url(#glow)"/><circle cx="815" cy="325" r="90" fill="url(#glow)"/>
+</svg>
