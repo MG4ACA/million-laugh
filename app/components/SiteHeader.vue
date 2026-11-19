@@ -2,11 +2,12 @@
 import { nav } from '~/data/site'
 const open = ref(false)
 const route = useRoute()
+const scrolled = useScrolled()
 watch(() => route.fullPath, () => (open.value = false))
 </script>
 <template>
   <header class="hdr">
-    <div class="hdr-bar">
+    <div class="hdr-bar" :class="{ 'is-scrolled': scrolled }">
       <NuxtLink to="/" class="logo" aria-label="Million Laugh Entertainment, home"><img src="/images/logo.png" alt="Million Laugh Entertainment (Pvt) Ltd"></NuxtLink>
       <nav class="nav" aria-label="Main">
         <NuxtLink v-for="l in nav" :key="l.to" :to="l.to" class="nl">{{ l.label }}</NuxtLink>

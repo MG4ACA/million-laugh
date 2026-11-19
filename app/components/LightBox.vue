@@ -12,7 +12,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', key))
 </script>
 <template>
   <div v-if="index !== null" class="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" @click.self="emit('close')">
-    <img :src="items[index].src" :alt="items[index].alt">
+    <img :key="items[index].src" :src="items[index].src" :alt="items[index].alt">
     <button class="x" aria-label="Close" @click="emit('close')">✕</button>
     <button class="pv" aria-label="Previous photo" @click="step(-1)">‹</button>
     <button class="nx" aria-label="Next photo" @click="step(1)">›</button>
