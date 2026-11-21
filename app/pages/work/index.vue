@@ -10,7 +10,7 @@ const showFeatured = computed(() => active.value === 'All' || featured.filter ==
   <div>
     <PageHead chip="Work">
       <template #title>Moments we were <span class="mark">proud</span> to be part of.</template>
-      <template #extra><div class="chips" style="margin-top:28px"><button v-for="f in filters" :key="f" :class="{ on: active === f }" @click="active = f">{{ f }}</button></div></template>
+      <template #extra><div v-reveal class="chips" style="margin-top:28px"><button v-for="f in filters" :key="f" :class="{ on: active === f }" @click="active = f">{{ f }}</button></div></template>
     </PageHead>
     <section class="wrap section" style="padding-top:0">
       <FeatureProject v-if="showFeatured" :p="featured" />

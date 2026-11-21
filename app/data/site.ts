@@ -169,7 +169,14 @@ export const clients = [
   { name: 'SLT-MOBITEL', src: '/images/logos/slt-mobitel.jpg' },
   { name: 'National Crafts Council', src: '/images/logos/national-crafts-council.jpg' },
   { name: 'Ministry of Sports', src: '/images/logos/ministry-sports.jpg' },
-  { name: 'National Savings Bank', src: '/images/logos/nsb.jpg' }
+  { name: 'National Savings Bank', src: '/images/logos/nsb.jpg' },
+  { name: 'Sri Lanka Cricket', src: '/images/logos/cricket.webp' },
+  { name: 'Government of Sri Lanka', src: '/images/logos/image3.webp' },
+  { name: 'FM Derana', src: '/images/logos/img4.webp' },
+  { name: 'Swarnavahini', src: '/images/logos/img5.webp' },
+  { name: 'Ministry of Finance Sri Lanka', src: '/images/logos/img6.webp' },
+  { name: 'Airport and Aviation Services (Sri Lanka) Ltd.', src: '/images/logos/img7.webp' },
+  { name: 'JW.ORG', src: '/images/logos/jworg.webp' }
 ]
 
 // Demo dates for the prototype

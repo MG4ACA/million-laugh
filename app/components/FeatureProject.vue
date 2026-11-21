@@ -3,7 +3,7 @@ import type { Project } from '~/data/site'
 defineProps<{ p: Project }>()
 </script>
 <template>
-  <NuxtLink :to="`/work/${p.slug}`" class="feature">
+  <NuxtLink :to="`/work/${p.slug}`" class="feature" v-reveal>
     <img :src="p.src" :alt="p.alt">
     <div class="over">
       <span class="tag">{{ p.cat }}</span>

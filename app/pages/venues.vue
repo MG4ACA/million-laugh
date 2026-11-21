@@ -10,7 +10,7 @@ const bia = projects.find(p => p.slug === 'bia-departure-expansion')!
       Two Sri Lankan firsts that give your event a venue and a floor nobody else can offer.
     </PageHead>
     <section class="wrap section" style="padding-top:0">
-      <div v-for="(v, i) in venues" :key="v.t" class="feat-row" :class="{ rev: i % 2 }">
+      <div v-for="(v, i) in venues" :key="v.t" v-reveal="i" class="feat-row" :class="{ rev: i % 2 }">
         <div class="photo"><img :src="v.src" :alt="v.alt"></div>
         <div>
           <span class="eyebrow">{{ v.tag }}</span>
@@ -21,7 +21,7 @@ const bia = projects.find(p => p.slug === 'bia-departure-expansion')!
         </div>
       </div>
     </section>
-    <section class="section"><div class="wrap"><div class="dark split">
+    <section class="section"><div class="wrap"><div class="dark split" v-reveal>
       <div><span class="eyebrow">Built for others</span><h2 class="h2" style="margin-bottom:14px">{{ bia.t }}</h2><p style="color:var(--dark-text);line-height:1.65">{{ bia.long }}</p></div>
       <div class="photo"><img :src="bia.src" :alt="bia.alt"></div>
     </div></div></section>
