@@ -4,7 +4,7 @@ import { footerCols, contact } from '~/data/site'
 <template>
   <footer class="ftr">
     <div class="ftr-in">
-      <div class="ftr-cta">
+      <div v-reveal class="ftr-cta">
         <p>Let's make your next moment memorable.</p>
         <NuxtLink to="/contact" class="btn btn-amber">Plan your event →</NuxtLink>
       </div>

@@ -4,7 +4,7 @@ withDefaults(defineProps<{ full?: boolean }>(), { full: false })
 const sent = ref(false)
 </script>
 <template>
-  <form class="form glass" @submit.prevent="sent = true">
+  <form class="form glass glass--mint" v-reveal @submit.prevent="sent = true">
     <label>Name<input type="text" placeholder="Your name" required></label>
     <label>Work email<input type="email" placeholder="name@company.com" required></label>
     <template v-if="full">

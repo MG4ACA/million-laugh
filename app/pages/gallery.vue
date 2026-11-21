@@ -13,7 +13,7 @@ const open = ref<number | null>(null)
       <template #extra><div class="chips" style="margin-top:28px"><button v-for="c in cats" :key="c" :class="{ on: active === c }" @click="active = c">{{ c }}</button></div></template>
     </PageHead>
     <section class="wrap section" style="padding-top:0">
-      <div class="mosaic"><button v-for="(g, i) in items" :key="g.src" type="button" :aria-label="`Open photo: ${g.alt}`" @click="open = i"><img :src="g.src" :alt="g.alt" loading="lazy"></button></div>
+      <div class="mosaic"><button v-for="(g, i) in items" :key="g.src" v-reveal="i" type="button" :aria-label="`Open photo: ${g.alt}`" @click="open = i"><img :src="g.src" :alt="g.alt" loading="lazy"></button></div>
     </section>
     <LightBox :items="items" :index="open" @close="open = null" @go="open = $event" />
   </div>
