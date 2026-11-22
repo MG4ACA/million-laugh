@@ -43,7 +43,7 @@ const glassTints = ['glass--mint', 'glass--violet'];
       <div class="dark split chairman-message" v-reveal>
         <div class="photo">
           <img
-            src="/images/chairman.webp"
+            src="/images/chairman.jpeg"
             alt="Srimal Wimalaratne, Chairman and Co-Founder of Million Laugh"
           />
         </div>
@@ -51,13 +51,46 @@ const glassTints = ['glass--mint', 'glass--violet'];
           <span class="eyebrow">The chairman's message</span>
           <h2 class="h2 quote" style="max-width: 860px">Welcome to Million Laugh Entertainment.</h2>
           <div class="chairman-copy">
-            <p>It fills my heart with gratitude and joy to share our story with you—a story of passion, perseverance, and people.</p>
-            <p>As a father to three energetic little boys and a devoted husband, my life revolves around love, connection, and family. When we co-founded this company in 2008, I dreamed of building something that embodied those same values—a place where every individual, whether a team member, a customer, or a partner, would feel like part of a greater family.</p>
-            <p>Over the years, Million Laugh Entertainment has grown into something truly special. Today, we’re a team of 65 incredibly talented and passionate people—engineers, designers, tech leads, and dreamers—who pour their hearts into everything we create. We’re not just colleagues; we’re family. And this sense of unity is what drives our work, shapes our culture, and fuels our success.</p>
-            <p>For us, every project is personal. Whether it’s designing a spectacular event, crafting a memorable experience, or delivering an innovative solution, we approach it with care, dedication, and a deep sense of responsibility. Your trust in us is not just a business transaction—it’s a bond we cherish and a commitment we hold sacred.</p>
-            <p>I often tell my sons that success isn’t measured by what we take but by what we give back. This principle guides everything we do at Million Laugh Entertainment. Our mission is to not only deliver excellence but to inspire, uplift, and create moments that leave a lasting impact—on our clients, our community, and our world.</p>
-            <p>To everyone who has been part of this journey—our team, our clients, our partners, and even those discovering us for the first time—thank you. Thank you for believing in us, for walking alongside us, and for allowing us to turn your dreams into reality.</p>
-            <p>As we look to the future, our commitment remains the same: to lead with love, create with passion, and treat everyone we encounter as family. Because at the heart of Million Laugh Entertainment is a belief that together, we can do extraordinary things.</p>
+            <p>
+              It fills my heart with gratitude and joy to share our story with you—a story of
+              passion, perseverance, and people.
+            </p>
+            <p>
+              As a father to three energetic little boys and a devoted husband, my life revolves
+              around love, connection, and family. When we co-founded this company in 2008, I
+              dreamed of building something that embodied those same values—a place where every
+              individual, whether a team member, a customer, or a partner, would feel like part of a
+              greater family.
+            </p>
+            <p>
+              Over the years, Million Laugh Entertainment has grown into something truly special.
+              Today, we’re a team of 65 incredibly talented and passionate people—engineers,
+              designers, tech leads, and dreamers—who pour their hearts into everything we create.
+              We’re not just colleagues; we’re family. And this sense of unity is what drives our
+              work, shapes our culture, and fuels our success.
+            </p>
+            <p>
+              For us, every project is personal. Whether it’s designing a spectacular event,
+              crafting a memorable experience, or delivering an innovative solution, we approach it
+              with care, dedication, and a deep sense of responsibility. Your trust in us is not
+              just a business transaction—it’s a bond we cherish and a commitment we hold sacred.
+            </p>
+            <p>
+              I often tell my sons that success isn’t measured by what we take but by what we give
+              back. This principle guides everything we do at Million Laugh Entertainment. Our
+              mission is to not only deliver excellence but to inspire, uplift, and create moments
+              that leave a lasting impact—on our clients, our community, and our world.
+            </p>
+            <p>
+              To everyone who has been part of this journey—our team, our clients, our partners, and
+              even those discovering us for the first time—thank you. Thank you for believing in us,
+              for walking alongside us, and for allowing us to turn your dreams into reality.
+            </p>
+            <p>
+              As we look to the future, our commitment remains the same: to lead with love, create
+              with passion, and treat everyone we encounter as family. Because at the heart of
+              Million Laugh Entertainment is a belief that together, we can do extraordinary things.
+            </p>
             <p>With heartfelt gratitude,</p>
           </div>
           <p>

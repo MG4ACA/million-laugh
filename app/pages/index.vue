@@ -412,7 +412,7 @@ function advanceHeroCarousel() {
       <div class="split glass glass--sky" v-reveal style="padding: clamp(20px, 4vw, 48px)">
         <div class="photo">
           <img
-            src="/images/chairman.webp"
+            src="/images/chairman.jpeg"
             alt="Srimal Wimalaratne, Chairman and Co-Founder of Million Laugh"
           />
         </div>
