@@ -18,7 +18,9 @@ const glassTints = ['glass--mint', 'glass--amber'];
 const defaultHeroBackground = '/images/lanka-t10-team.jpg';
 const autoHeroBackground = ref(defaultHeroBackground);
 const hoveredHeroBackground = ref<string | null>(null);
-const activeHeroBackground = computed(() => hoveredHeroBackground.value ?? autoHeroBackground.value);
+const activeHeroBackground = computed(
+  () => hoveredHeroBackground.value ?? autoHeroBackground.value,
+);
 const heroGallery = ref<HTMLElement | null>(null);
 const canScrollHeroGalleryPrevious = ref(false);
 const canScrollHeroGalleryNext = ref(false);
@@ -169,7 +171,7 @@ function advanceHeroCarousel() {
       </Transition>
       <div class="rel">
         <SiteHeader />
-        <section class="wrap hero hero--immersive">
+        <section class="hero hero--immersive">
           <div class="hero-content">
             <span class="chip hero-intro">Colombo, Sri Lanka · Event partner since 2008</span>
             <h1 class="h1">

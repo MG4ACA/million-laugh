@@ -688,18 +688,23 @@ a.link:hover {
   position: absolute;
   z-index: 0;
   inset: 0;
-  content: "";
+  content: '';
   background:
-    linear-gradient(90deg, rgba(5, 23, 24, 0.76) 0%, rgba(5, 23, 24, 0.42) 48%, rgba(5, 23, 24, 0.22) 100%),
+    linear-gradient(
+      90deg,
+      rgba(5, 23, 24, 0.76) 0%,
+      rgba(5, 23, 24, 0.42) 48%,
+      rgba(5, 23, 24, 0.22) 100%
+    ),
     linear-gradient(0deg, rgba(5, 23, 24, 0.88) 0%, rgba(5, 23, 24, 0.12) 72%),
-    url("/images/lanka-t10-team.jpg") center 48% / cover no-repeat;
+    url('/images/lanka-t10-team.jpg') center 48% / cover no-repeat;
   transform: scale(1.02);
 }
 .home-hero-shell::after {
   position: absolute;
   z-index: 0;
   inset: 0;
-  content: "";
+  content: '';
   pointer-events: none;
   background: linear-gradient(0deg, rgba(5, 23, 24, 0.48), rgba(5, 23, 24, 0.08) 80%);
 }
@@ -739,6 +744,8 @@ a.link:hover {
   gap: clamp(28px, 4vw, 64px);
   padding-top: clamp(64px, 11vh, 132px);
   padding-bottom: clamp(32px, 5vh, 64px);
+  padding-left: 80px;
+  padding-right: 44px;
 }
 .hero-content {
   position: relative;
@@ -862,8 +869,13 @@ a.link:hover {
   position: absolute;
   z-index: -1;
   inset: 0;
-  content: "";
-  background: linear-gradient(180deg, transparent 30%, rgba(4, 17, 18, 0.2) 53%, rgba(4, 17, 18, 0.88) 100%);
+  content: '';
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(4, 17, 18, 0.2) 53%,
+    rgba(4, 17, 18, 0.88) 100%
+  );
 }
 .hero-card > img {
   position: absolute;
@@ -955,10 +967,15 @@ a.link:hover {
   .home-hero-shell::before {
     background:
       linear-gradient(90deg, rgba(5, 23, 24, 0.56), rgba(5, 23, 24, 0.28)),
-      url("/images/lanka-t10-team.jpg") 54% center / cover no-repeat;
+      url('/images/lanka-t10-team.jpg') 54% center / cover no-repeat;
   }
   .home-hero-shell::after {
-    background: linear-gradient(0deg, rgba(5, 23, 24, 0.9) 0%, rgba(5, 23, 24, 0.52) 50%, rgba(5, 23, 24, 0.24) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(5, 23, 24, 0.9) 0%,
+      rgba(5, 23, 24, 0.52) 50%,
+      rgba(5, 23, 24, 0.24) 100%
+    );
   }
   .hero-background-swap {
     object-position: 54% center;
