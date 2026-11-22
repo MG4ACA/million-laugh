@@ -1,5 +1,4 @@
 // All copy and image references for the prototype live here. No CMS, no backend.
-const P = (n: string) => `/images/placeholders/${n}.svg`;
 const IMG = (n: string) => `/images/${n}.jpg`;
 
 export const contact = {
@@ -78,7 +77,7 @@ export const projects: Project[] = [
     t: 'Lanka Premier League 2026 Opening Ceremony',
     d: 'A drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle at the SSC Grounds, Colombo.',
     long: "Million Laugh served as Official Event Partner for the Lanka Premier League 2026 Opening Ceremony, bringing world-class entertainment to Sri Lanka's premier T20 cricket tournament. Held at the SSC Grounds, Colombo, on 17 July 2026, the ceremony was built around a drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle that celebrated Sri Lanka's heritage on one stage. The evening was carried by live performances from Yohani, Centigradz, Sanka and Naadro, with innovation, creativity and flawless execution behind every moment.",
-    src: IMG('aerial-concert'),
+    src: IMG('lpl-2026-open-ceromony'),
     alt: 'Aerial view of a night concert stage',
     meta: [
       { k: 'Role', v: 'Official Event Partner' },
@@ -169,9 +168,8 @@ export const projects: Project[] = [
     t: "ICC Women's Cricket World Cup 2025",
     d: "Behind-the-scenes event management across the tournament, and the opening-ceremony performance of Sri Lanka's national anthem in Guwahati.",
     long: "Behind-the-scenes event management across the tournament and the opening-ceremony performance of Sri Lanka's national anthem by Nuwandhika Senaratne in Guwahati.",
-    src: P('stadium'),
-    alt: 'Sample image: stadium at night',
-    placeholder: true,
+    src: IMG('icc-womens-world-cup-2025'),
+    alt: 'ICC Women\'s Cricket World Cup 2025',
     meta: [
       { k: 'Category', v: 'Sports' },
       { k: 'Date', v: 'Oct 2025' },
@@ -184,9 +182,8 @@ export const projects: Project[] = [
     t: 'BIA Departure Expansion',
     d: 'A new departure marquee at Bandaranaike International Airport, delivered end to end.',
     long: 'To handle more passengers at Bandaranaike International Airport, we delivered a new departure marquee end to end: structural design, steel framing, flooring, electrical, interiors and finishing.',
-    src: P('airport'),
-    alt: 'Sample image: airport departure marquee',
-    placeholder: true,
+    src: IMG('idb-expo-2025'),
+    alt: 'BIA Departure Expansion marquee',
     meta: [
       { k: 'Category', v: 'Spaces' },
       { k: 'Scope', v: 'Design to finishing' },
@@ -199,9 +196,8 @@ export const projects: Project[] = [
     t: 'IDB Expo 2025',
     d: "Official event management partner to the Industrial Development Board for four days at the year's largest industrial exhibition.",
     long: "Official event management partner to the Industrial Development Board for four days at the year's largest industrial exhibition, from 18 September 2025.",
-    src: P('expo'),
-    alt: 'Sample image: exhibition hall',
-    placeholder: true,
+    src: IMG('idb-expo-2025'),
+    alt: 'IDB Expo 2025 exhibition hall',
     meta: [
       { k: 'Category', v: 'Exhibition' },
       { k: 'Date', v: '18 Sep 2025' },
@@ -228,9 +224,8 @@ export const projects: Project[] = [
     t: 'Grass Protection Cover',
     d: 'First imported in Sri Lanka: a waterproof, flexible floor system covering up to 75,000 sq ft.',
     long: 'A premium outdoor floor system for indoor and outdoor grounds. Waterproof, flexible and safe under heavy loads.',
-    src: P('ground'),
-    alt: 'Sample image: grass protection cover',
-    placeholder: true,
+    src: IMG('grass-protection-cover'),
+    alt: 'Grass protection cover laid on a ground',
     meta: [
       { k: 'Category', v: 'Spaces' },
       { k: 'Coverage', v: 'Up to 75,000 sq ft' },
@@ -284,9 +279,8 @@ export const services = [
     t: 'Exhibitions',
     s: 'Designed environments that attract attention and generate leads.',
     d: 'Immersive environments with innovative design and state-of-the-art technology that attract attention, spark engagement and generate leads.',
-    src: P('expo'),
-    alt: 'Sample image: exhibition hall',
-    placeholder: true,
+    src: IMG('idb-expo-2025'),
+    alt: 'IDB Expo 2025 exhibition hall',
   },
   {
     n: '07',
@@ -331,9 +325,8 @@ export const steps = [
 
 export const venues = [
   {
-    src: P('marquee'),
-    alt: 'Sample image: permanent marquee at dusk',
-    placeholder: true,
+    src: IMG('permanent-marquee'),
+    alt: 'APS Permanent Marquee at Cinnamon Grand',
     tag: "Sri Lanka's first",
     t: 'APS Permanent Marquee, Cinnamon Grand',
     short:
@@ -348,9 +341,8 @@ export const venues = [
     ],
   },
   {
-    src: P('ground'),
-    alt: 'Sample image: grass protection cover',
-    placeholder: true,
+    src: IMG('grass-protection-cover'),
+    alt: 'Grass protection cover on a ground',
     tag: 'First imported in Sri Lanka',
     t: 'Grass Protection Cover',
     short:
