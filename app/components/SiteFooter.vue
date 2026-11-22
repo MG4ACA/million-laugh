@@ -16,7 +16,17 @@ import { footerCols, contact } from '~/data/site'
         <div class="ftr-links">
           <div v-for="c in footerCols" :key="c.title">
             <span>{{ c.title }}</span>
-            <NuxtLink v-for="i in c.items" :key="i.label" :to="i.to">{{ i.label }}</NuxtLink>
+            <template v-for="i in c.items" :key="i.label">
+              <a
+                v-if="i.to.startsWith('https://')"
+                :href="i.to"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ i.label }}
+              </a>
+              <NuxtLink v-else :to="i.to">{{ i.label }}</NuxtLink>
+            </template>
           </div>
         </div>
       </div>
