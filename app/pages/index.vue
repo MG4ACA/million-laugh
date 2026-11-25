@@ -15,6 +15,9 @@ useHead({ title: 'Million Laugh Entertainment | Making moments memorable' });
 const featured = projects.find((p) => p.featured)!;
 const homeWork = projects.filter((p) => p.home).slice(0, 5);
 const glassTints = ['glass--mint', 'glass--amber'];
+const activeCsrIndex = ref(0);
+const isCsrHovered = ref(false);
+const isCsrFocused = ref(false);
 const defaultHeroBackground = '/images/lanka-t10-team.jpg';
 const autoHeroBackground = ref(defaultHeroBackground);
 const hoveredHeroBackground = ref<string | null>(null);
@@ -29,17 +32,33 @@ const isHeroTrackMoving = ref(false);
 const isHeroTrackResetting = ref(false);
 let heroRotationTimer: number | undefined;
 let heroTrackTimer: number | undefined;
+let csrRotationTimer: number | undefined;
 onMounted(() => {
   void nextTick(updateHeroGalleryControls);
   window.addEventListener('resize', updateHeroGalleryControls);
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   heroRotationTimer = window.setInterval(advanceHeroCarousel, 5500);
+  csrRotationTimer = window.setInterval(advanceCsrAccordion, 5000);
 });
 onBeforeUnmount(() => {
   if (heroRotationTimer !== undefined) window.clearInterval(heroRotationTimer);
   if (heroTrackTimer !== undefined) window.clearTimeout(heroTrackTimer);
+  if (csrRotationTimer !== undefined) window.clearInterval(csrRotationTimer);
   window.removeEventListener('resize', updateHeroGalleryControls);
 });
+function advanceCsrAccordion() {
+  if (!csr.length || isCsrHovered.value || isCsrFocused.value) return;
+  activeCsrIndex.value = (activeCsrIndex.value + 1) % csr.length;
+}
+function resumeCsrRotationOnFocusLeave(event: FocusEvent) {
+  const accordion = event.currentTarget;
+  if (
+    accordion instanceof HTMLElement &&
+    !(event.relatedTarget instanceof Node && accordion.contains(event.relatedTarget))
+  ) {
+    isCsrFocused.value = false;
+  }
+}
 function updateHeroGalleryControls() {
   const gallery = heroGallery.value;
   if (!gallery) return;
@@ -405,7 +424,7 @@ function advanceHeroCarousel() {
           <span class="link">Event details →</span>
         </NuxtLink>
       </div>
-      <p class="body" style="margin-top: 12px"><span class="badge">Demo dates</span></p>
+      <p class="body" style="margin-top: 12px">Join us at upcoming events across Sri Lanka.</p>
     </section>
 
     <section class="wrap section">
@@ -436,11 +455,8 @@ function advanceHeroCarousel() {
     </section>
 
     <section class="wrap section">
-      <div class="split" style="align-items: start">
+      <div class="split">
         <div>
-          <div class="photo" style="margin-bottom: 24px">
-            <img src="/images/crowd.jpg" alt="Crowd at a live event" loading="lazy" />
-          </div>
           <span v-reveal class="eyebrow">Our team</span>
           <h2 v-reveal class="h2" style="margin: 10px 0 12px">One team, one vision</h2>
           <p class="lead" style="margin-bottom: 14px">
@@ -449,28 +465,74 @@ function advanceHeroCarousel() {
           </p>
           <NuxtLink to="/about" class="link">Meet the team →</NuxtLink>
         </div>
-        <div>
-          <span v-reveal class="eyebrow">Corporate social responsibility</span>
-          <h2 v-reveal class="h2" style="margin: 10px 0 12px">
-            For people, for planet, for the future
-          </h2>
-          <p class="lead">
-            We commit more than LKR 2 million every year to community and environmental work.
-          </p>
-          <div class="pills">
-            <div
-              v-for="(c, i) in csr"
-              :key="c.t"
-              :class="['pill-row', 'glass', glassTints[i % glassTints.length]]"
-              v-reveal="i"
-            >
-              <b>{{ c.t }}</b>
-              <span>{{ c.s }}</span>
-            </div>
-          </div>
-          <NuxtLink to="/csr" class="link">Read about our CSR work →</NuxtLink>
+        <div class="photo">
+          <img src="/images/crowd.jpg" alt="Crowd at a live event" loading="lazy" />
         </div>
       </div>
+    </section>
+
+    <section class="wrap section">
+      <div v-reveal class="csr-intro">
+        <span class="eyebrow">Corporate social responsibility</span>
+        <h2 class="h2" style="margin: 10px 0 12px">
+          For people, for planet, for the future
+        </h2>
+        <p class="lead">
+          We commit more than LKR 2 million every year to community and environmental work.
+        </p>
+      </div>
+      <div
+        class="csr-accordion"
+        role="group"
+        aria-label="Our CSR initiatives"
+        @mouseenter="isCsrHovered = true"
+        @mouseleave="isCsrHovered = false"
+        @focusin="isCsrFocused = true"
+        @focusout="resumeCsrRotationOnFocusLeave"
+      >
+        <article
+          v-for="(c, i) in csr"
+          :key="c.t"
+          :class="['csr-accordion-card', { 'is-active': activeCsrIndex === i }]"
+        >
+          <button
+            :id="`csr-trigger-${i}`"
+            class="csr-accordion-trigger"
+            type="button"
+            :aria-expanded="activeCsrIndex === i"
+            :aria-controls="`csr-panel-${i}`"
+            @click="activeCsrIndex = activeCsrIndex === i ? -1 : i"
+          >
+            <span class="csr-accordion-number">{{ c.n }}</span>
+            <span class="csr-accordion-title">{{ c.t }}</span>
+            <img
+              v-if="activeCsrIndex !== i"
+              class="csr-accordion-thumb"
+              :src="c.src"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
+            <span class="csr-accordion-icon" aria-hidden="true">
+              {{ activeCsrIndex === i ? '−' : '+' }}
+            </span>
+          </button>
+          <div
+            :id="`csr-panel-${i}`"
+            class="csr-accordion-panel"
+            role="region"
+            :aria-labelledby="`csr-trigger-${i}`"
+            :aria-hidden="activeCsrIndex !== i"
+          >
+            <img :src="c.src" :alt="`${c.t} initiative`" loading="lazy" />
+            <div class="csr-accordion-copy">
+              <p class="csr-accordion-summary">{{ c.s }}</p>
+              <p class="body">{{ c.d }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <NuxtLink to="/csr" class="link csr-link">Read about our CSR work →</NuxtLink>
     </section>
 
     <section class="wrap section">

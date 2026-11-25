@@ -7,7 +7,7 @@ const glassTints = ['glass--mint', 'glass--sky', 'glass--amber', 'glass--violet'
   <div>
     <PageHead chip="Events"><template #title>Come and see <span class="mark">our work.</span></template></PageHead>
     <section class="wrap section" style="padding-top:0">
-      <h2 v-reveal class="h2" style="font-size:clamp(26px,3vw,36px);margin-bottom:20px">Upcoming <span class="badge" style="vertical-align:middle">Demo dates</span></h2>
+      <h2 v-reveal class="h2" style="font-size:clamp(26px,3vw,36px);margin-bottom:20px">Upcoming</h2>
       <div class="stack"><div v-for="(e, i) in upcoming" :key="e.t" v-reveal="i" :class="['ev', 'glass', glassTints[i % glassTints.length]]"><div class="date"><b>{{ e.day }}</b><small>{{ e.mon }}</small></div><div><div class="t">{{ e.t }}</div><div class="p">{{ e.p }}</div></div><NuxtLink to="/contact" class="link">Event details</NuxtLink></div></div>
     </section>
     <section class="wrap section" style="padding-top:0">
