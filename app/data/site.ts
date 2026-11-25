@@ -5,7 +5,7 @@ export const contact = {
   address: '350 Makola Road, Kiribathgoda, Sri Lanka',
   email: 'info@millionlaugh.com',
   phone: '+94 112 910 677',
-  whatsapp: '[WHATSAPP NUMBER]',
+  whatsapp: '0755915242',
 };
 
 export const nav = [
@@ -385,25 +385,55 @@ export const clients = [
 
 // Demo dates for the prototype
 export const upcoming = [
-  { day: '12', mon: 'Dec', t: 'Yaga Festival', p: 'Port City · 12 Dec 2026 · 6 pm to 10 pm' },
+  {
+    day: '12',
+    mon: 'Dec',
+    t: 'Yaga Festival',
+    p: 'Port City · 12 Dec 2026 · 6 pm to 10 pm',
+    details:
+      'Celebrate an evening of live music, vibrant performances and festival energy by the waterfront. Bring your friends and enjoy a memorable night at Port City.',
+    src: IMG('aerial-concert'),
+    alt: 'Aerial view of a live concert crowd',
+  },
   {
     day: '19',
     mon: 'Dec',
     t: 'SLT Mobitel Akasa Container Product Forum',
     p: 'Monarch Imperial · 19 Dec 2026 · 6 pm to 10 pm',
+    details:
+      'An evening forum bringing guests together to discover the Akasa container product, connect with industry professionals and enjoy a hosted programme at Monarch Imperial.',
+    src: IMG('stage-avaya'),
+    alt: 'Stage setup for a corporate product event',
   },
-  { day: '15', mon: 'Jan', t: 'Smartphone Launch', p: 'Lotus Tower · 15 Jan 2027 · 7 pm to 10 pm' },
+  {
+    day: '15',
+    mon: 'Jan',
+    t: 'Smartphone Launch',
+    p: 'Lotus Tower · 15 Jan 2027 · 7 pm to 10 pm',
+    details:
+      'Join us at Lotus Tower for an evening unveiling a new smartphone. The launch experience features product reveals, live demonstrations and entertainment.',
+    src: IMG('iphone-launch'),
+    alt: 'Smartphone displayed at a product launch',
+  },
   {
     day: '05',
     mon: 'Feb',
     t: 'Sri Lanka vs Australia One Day Series',
     p: 'R. Premadasa International Cricket Stadium · 5 to 7 Feb 2027',
+    details:
+      'Experience the excitement of international one-day cricket in Colombo. Match-day entertainment and a lively stadium atmosphere make this a celebration for fans.',
+    src: IMG('lanka-t10-team'),
+    alt: 'Cricket teams gathered on the field',
   },
   {
     day: '13',
     mon: 'Feb',
     t: 'SLIM Effie Awards Ceremony',
     p: 'Monarch Imperial · 13 Feb 2027 · 6 pm to 11 pm',
+    details:
+      'Celebrate Sri Lanka’s most effective marketing campaigns at an awards evening recognising creativity, strategy and measurable impact.',
+    src: IMG('galactic-night'),
+    alt: 'Awards ceremony stage illuminated with lights',
   },
 ];
 
