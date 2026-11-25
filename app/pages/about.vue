@@ -18,8 +18,8 @@ const glassTints = ['glass--mint', 'glass--violet'];
     <section class="wrap">
       <div v-reveal class="photo" style="aspect-ratio: 16/8">
         <img
-          src="/images/lanka-t10-team.jpg"
-          alt="The Million Laugh team on the ground at a sports event"
+          src="/images/million-laugh-team.png"
+          alt="The Million Laugh team"
           style="object-position: center 60%"
         />
       </div>

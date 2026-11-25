@@ -466,7 +466,7 @@ function advanceHeroCarousel() {
           <NuxtLink to="/about" class="link">Meet the team →</NuxtLink>
         </div>
         <div class="photo">
-          <img src="/images/crowd.jpg" alt="Crowd at a live event" loading="lazy" />
+          <img src="/images/million-laugh-team.png" alt="The Million Laugh team" loading="lazy" />
         </div>
       </div>
     </section>
