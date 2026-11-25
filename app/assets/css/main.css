@@ -697,7 +697,7 @@ a.link:hover {
       rgba(5, 23, 24, 0.22) 100%
     ),
     linear-gradient(0deg, rgba(5, 23, 24, 0.88) 0%, rgba(5, 23, 24, 0.12) 72%),
-    url('/images/lanka-t10-team.jpg') center 48% / cover no-repeat;
+    url('/images/michael-jackson-event.jpeg') center 48% / cover no-repeat;
   transform: scale(1.02);
 }
 .home-hero-shell::after {
@@ -967,7 +967,7 @@ a.link:hover {
   .home-hero-shell::before {
     background:
       linear-gradient(90deg, rgba(5, 23, 24, 0.56), rgba(5, 23, 24, 0.28)),
-      url('/images/lanka-t10-team.jpg') 54% center / cover no-repeat;
+      url('/images/michael-jackson-event.jpeg') 54% center / cover no-repeat;
   }
   .home-hero-shell::after {
     background: linear-gradient(
@@ -1265,6 +1265,12 @@ a.link:hover {
   font-size: 28px;
   font-weight: 800;
   line-height: 1;
+}
+.ev-body {
+  flex: 1;
+}
+.ev-link {
+  margin-left: auto;
 }
 .date small {
   font-size: 12px;

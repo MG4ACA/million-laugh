@@ -18,7 +18,7 @@ const glassTints = ['glass--mint', 'glass--amber'];
 const activeCsrIndex = ref(0);
 const isCsrHovered = ref(false);
 const isCsrFocused = ref(false);
-const defaultHeroBackground = '/images/lanka-t10-team.jpg';
+const defaultHeroBackground = '/images/michael-jackson-event.jpeg';
 const autoHeroBackground = ref(defaultHeroBackground);
 const hoveredHeroBackground = ref<string | null>(null);
 const activeHeroBackground = computed(
@@ -88,46 +88,67 @@ function clearHeroBackgroundOnFocusLeave(event: FocusEvent) {
 }
 const heroCards = [
   {
-    eyebrow: 'Sports events',
-    title: 'Lanka T10',
-    src: '/images/lanka-t10-team.jpg',
-    alt: 'Teams and officials at the Lanka T10 Super League',
-    to: '/work/lanka-t10-super-league',
+    eyebrow: 'Live entertainment',
+    title: 'Michael Jackson Tribute Event',
+    src: '/images/michael-jackson-event.jpeg',
+    alt: 'Michael Jackson tribute performance at a live event',
+    to: '/work',
   },
   {
     eyebrow: 'Opening ceremonies',
-    title: 'A spectacular welcome',
-    src: '/images/fire-dancer.jpg',
-    alt: 'Fire dancer performing at a cricket tournament ceremony',
+    title: 'LPL 2026 Opening Ceremony',
+    src: '/images/lpl-2026-open-ceromony.jpg',
+    alt: 'Aerial view of the LPL 2026 Opening Ceremony at SSC Grounds',
+    to: '/work/lpl-2026-opening-ceremony',
+  },
+  {
+    eyebrow: 'Corporate awards',
+    title: 'SLIM National Sales Awards 2025',
+    src: '/images/slim-national-sales-awards.jpeg',
+    alt: 'SLIM National Sales Awards 2025 Guardians of Growth ceremony stage',
+    to: '/work',
+  },
+  {
+    eyebrow: 'Festivals',
+    title: 'Yaga Festival',
+    src: '/images/yaga-festival.jpeg',
+    alt: 'Yaga Festival live music and performances at Port City',
+    to: '/events',
+  },
+  {
+    eyebrow: 'Sports events',
+    title: 'T10 Player Draft',
+    src: '/images/t10-player-draft.jpg',
+    alt: 'Players at the T10 Player Draft',
+    to: '/work/lanka-t10-super-league',
+  },
+  {
+    eyebrow: 'Exhibitions',
+    title: 'National AI Expo',
+    src: '/images/national-ai-expo.jpg',
+    alt: 'Exhibition hall at the National AI Expo',
     to: '/work',
   },
   {
     eyebrow: 'Live productions',
-    title: 'On the big stage',
-    src: '/images/dancers-stage.jpg',
-    alt: 'Live dancers performing on an illuminated event stage',
+    title: 'Delmege Event',
+    src: '/images/delmege-event.jpg',
+    alt: 'Stage and audience at the Delmege corporate event',
+    to: '/work',
+  },
+  {
+    eyebrow: 'Awards ceremonies',
+    title: 'National Sales Awards',
+    src: '/images/national-sales-awards.jpg',
+    alt: 'Stage at the National Sales Awards ceremony',
     to: '/work',
   },
   {
     eyebrow: 'Brand experiences',
-    title: 'Product launches',
-    src: '/images/iphone-launch.jpg',
-    alt: 'SLT-MOBITEL iPhone 16 Pro launch installation',
-    to: '/work/iphone-16-pro-launch',
-  },
-  {
-    eyebrow: 'City installations',
-    title: 'Colombo at Christmas',
-    src: '/images/christmas-colombo.jpg',
-    alt: 'Illuminated Christmas installation in Colombo',
-    to: '/work/christmas-colombo-city',
-  },
-  {
-    eyebrow: 'Corporate events',
-    title: 'Saudi National Day',
-    src: '/images/saudi-national-day.jpg',
-    alt: 'Dignitaries on stage at the Saudi National Day reception',
-    to: '/work/saudi-national-day',
+    title: 'SLIM Brands Excellence',
+    src: '/images/slim-brands-excellence.jpg',
+    alt: 'SLIM Brands Excellence awards evening',
+    to: '/work',
   },
 ];
 const displayedHeroCards = ref([...heroCards]);
@@ -417,11 +438,11 @@ function advanceHeroCarousel() {
             <b>{{ e.day }}</b>
             <small>{{ e.mon }}</small>
           </div>
-          <div>
+          <div class="ev-body">
             <div class="t">{{ e.t }}</div>
             <div class="p">{{ e.p }}</div>
           </div>
-          <span class="link">Event details →</span>
+          <span class="link ev-link">Event details →</span>
         </NuxtLink>
       </div>
       <p class="body" style="margin-top: 12px">Join us at upcoming events across Sri Lanka.</p>
@@ -474,9 +495,7 @@ function advanceHeroCarousel() {
     <section class="wrap section">
       <div v-reveal class="csr-intro">
         <span class="eyebrow">Corporate social responsibility</span>
-        <h2 class="h2" style="margin: 10px 0 12px">
-          For people, for planet, for the future
-        </h2>
+        <h2 class="h2" style="margin: 10px 0 12px">For people, for planet, for the future</h2>
         <p class="lead">
           We commit more than LKR 2 million every year to community and environmental work.
         </p>
