@@ -18,8 +18,8 @@ const glassTints = ['glass--mint', 'glass--violet'];
     <section class="wrap">
       <div v-reveal class="photo" style="aspect-ratio: 16/8">
         <img
-          src="/images/lanka-t10-team.jpg"
-          alt="The Million Laugh team on the ground at a sports event"
+          src="/images/million-laugh-team.png"
+          alt="The Million Laugh team"
           style="object-position: center 60%"
         />
       </div>
@@ -104,10 +104,20 @@ const glassTints = ['glass--mint', 'glass--violet'];
     <section class="wrap section" style="padding-top: 0">
       <span v-reveal class="eyebrow">Our team</span>
       <h2 v-reveal class="h2" style="margin: 10px 0 14px">One team, one vision</h2>
-      <p class="lead" style="max-width: 680px">
-        A close-knit family bound by creativity and a drive to get every detail right. Every voice
-        is heard, and hard work is balanced with laughter.
-      </p>
+      <div class="work-content">
+        <p class="work-copy">
+          At Million Laugh Entertainment, our team is the heartbeat of everything we do. We are more than just colleagues – we are a family bound by a shared passion for creativity, innovation, and excellence. Each member brings unique skills, ideas, and a commitment to delivering the best in every project we undertake. Together, we form a dynamic force that thrives on collaboration, mutual support, and the collective drive to bring our clients' visions to life through engagement entertainment.
+        </p>
+        <p class="work-copy">
+          Our team spirit is what sets us apart. We believe in the power of collaboration, where every voice is heard and every idea is valued. It’s this unity and shared sense of purpose that allows us to tackle any challenge, push boundaries, and consistently exceed expectations in providing the best event entertainment for your business events.
+        </p>
+        <p class="work-copy">
+          At Million Laugh, we nurture a culture of respect, trust, and fun, where hard work is balanced with laughter and creativity. We support one another, celebrate our successes, and learn from every experience. We’re not just a team; we are a close-knit family, working together to create extraordinary moments and unforgettable experiences for our clients.
+        </p>
+        <p class="work-copy">
+          When you work with us, you’re not just partnering with professionals – you’re joining a family that cares deeply about making your event truly spectacular. Together, we’ll create something amazing!
+        </p>
+      </div>
     </section>
   </div>
 </template>

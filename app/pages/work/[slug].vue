@@ -18,7 +18,27 @@ useHead({ title: `${p.t} | Million Laugh Entertainment` })
       </template>
     </PageHead>
     <section class="wrap"><div v-reveal class="photo" style="aspect-ratio:16/8"><img :src="p.src" :alt="p.alt"></div></section>
-    <section class="wrap section"><p v-reveal class="lead" style="max-width:760px;font-size:clamp(18px,1.8vw,22px);color:var(--ink)">{{ p.long }}</p></section>
+    <section class="wrap section">
+      <div v-reveal class="work-content">
+        <template v-for="(block, i) in p.content" :key="i">
+          <template v-if="block.type === 'text'">
+            <p :class="[i === 0 ? 'work-copy--lead' : 'work-copy']">
+              {{ block.body }}
+            </p>
+          </template>
+          
+          <div v-else-if="block.type === 'list'" class="work-highlights-section">
+            <span class="eyebrow" style="display:block; margin-bottom:24px">Event Highlights</span>
+            <div class="highlights">
+              <div v-for="(item, idx) in block.body" :key="idx" class="highlight-pill glass glass--mint">
+                <span class="highlight-bullet">•</span>
+                {{ item }}
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
     <section v-if="more.length" class="wrap section" style="padding-top:0">
       <span v-reveal class="eyebrow">More work</span>
       <div class="grid g3" style="margin-top:20px"><ProjectCard v-for="m in more" :key="m.slug" :p="m" /></div>
