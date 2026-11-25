@@ -66,6 +66,7 @@ export interface Project {
   meta: { k: string; v: string }[];
   featured?: boolean;
   home?: boolean;
+  content?: { type: 'text' | 'list', body: string | string[] }[];
 }
 
 export const projects: Project[] = [
@@ -77,6 +78,14 @@ export const projects: Project[] = [
     t: 'Lanka Premier League 2026 Opening Ceremony',
     d: 'A drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle at the SSC Grounds, Colombo.',
     long: "Million Laugh served as Official Event Partner for the Lanka Premier League 2026 Opening Ceremony, bringing world-class entertainment to Sri Lanka's premier T20 cricket tournament. Held at the SSC Grounds, Colombo, on 17 July 2026, the ceremony was built around a drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle that celebrated Sri Lanka's heritage on one stage. The evening was carried by live performances from Yohani, Centigradz, Sanka and Naadro, with innovation, creativity and flawless execution behind every moment.",
+    content: [
+      { type: 'text', body: "Million Laugh Entertainment (Pvt) Ltd is proud to serve as the Official Event Partner for the Lanka Premier League (LPL) 2026 Opening Ceremony, promising an unforgettable evening where world-class entertainment meets the excitement of Sri Lanka's premier T20 cricket tournament." },
+      { type: 'text', body: "Taking place at the SSC Grounds, Colombo, this spectacular opening ceremony has been designed to deliver an extraordinary experience for cricket fans and entertainment lovers alike. The event will feature a breathtaking drone show, a dazzling light show, the highly anticipated LPL Grand Trophy Reveal, and a vibrant cultural spectacle that celebrates Sri Lanka's rich heritage on one grand stage." },
+      { type: 'text', body: "The evening will come alive with electrifying performances by some of Sri Lanka's most celebrated artists and bands, including Yohani, Centigradz, Sanka, and Naadro, along with many more exciting entertainment acts that will keep the audience engaged throughout the night." },
+      { type: 'text', body: "As the Official Event Partner, Million Laugh Entertainment is committed to delivering an event that combines innovation, creativity, and flawless execution, creating a memorable opening celebration worthy of one of the region's biggest cricket leagues." },
+      { type: 'text', body: "Whether you're attending for the cricket, the music, the spectacular visuals, or the unforgettable atmosphere, the LPL 2026 Opening Ceremony promises to be one of the year's most anticipated entertainment events." },
+      { type: 'list', body: ["Spectacular Drone Show", "World-Class Light Show", "Grand LPL Trophy Reveal", "Vibrant Cultural Spectacle", "Live performances by Yohani, Centigradz, Sanka, Naadro, and other popular artists", "High-energy live band performances", "Immersive entertainment experience and many more surprises"] }
+    ],
     src: IMG('lpl-2026-open-ceromony'),
     alt: 'Aerial view of a night concert stage',
     meta: [

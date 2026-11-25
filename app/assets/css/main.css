@@ -1435,6 +1435,49 @@ a.link:hover {
 .mosaic button:hover .play-overlay svg {
   transform: scale(1.1);
 }
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.highlight-pill {
+  padding: 18px 22px;
+  border-radius: 20px;
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.3s ease;
+}
+.highlight-pill[class*="glass--"] {
+  border: 1px solid transparent;
+}
+.highlight-pill:hover {
+  transform: translateY(-4px);
+}
+.highlight-bullet {
+  color: var(--amber);
+  font-size: 24px;
+}
+
+.work-copy {
+  text-align: justify;
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.work-copy--lead {
+  text-align: justify;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
 .mini {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
