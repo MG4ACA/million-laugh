@@ -217,7 +217,7 @@ function advanceHeroCarousel() {
             <h1 class="h1">
               <span class="hero-line">Making</span>
               <span class="hero-line">moments</span>
-              <span class="hero-line"><span class="mark hero-gradient">memorable</span></span>
+              <span class="hero-line"><span class="mark hero-gradient">memorable.</span></span>
             </h1>
             <p class="lead hero-copy">
               Corporate events, sports, product launches and brand activations, planned and produced
