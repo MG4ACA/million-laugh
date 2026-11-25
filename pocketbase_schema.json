@@ -1,0 +1,49 @@
+[
+  {
+    "name": "projects",
+    "type": "base",
+    "listRule": "",
+    "viewRule": "",
+    "schema": [
+      {"name": "slug", "type": "text", "required": true},
+      {"name": "cat", "type": "text"},
+      {"name": "filter", "type": "text"},
+      {"name": "t", "type": "text", "required": true},
+      {"name": "d", "type": "text"},
+      {"name": "long", "type": "editor"},
+      {"name": "src", "type": "file", "options": {"maxSelect": 1, "mimeTypes": [], "thumbs": [], "maxSize": 5242880, "protected": false}},
+      {"name": "alt", "type": "text"},
+      {"name": "meta", "type": "json"},
+      {"name": "site_id", "type": "number", "required": true, "options": {"min": 1, "max": null, "noDecimal": true}}
+    ]
+  },
+  {
+    "name": "galleryItems",
+    "type": "base",
+    "listRule": "",
+    "viewRule": "",
+    "schema": [
+      {"name": "src", "type": "file", "options": {"maxSelect": 1, "mimeTypes": [], "thumbs": [], "maxSize": 5242880, "protected": false}},
+      {"name": "alt", "type": "text"},
+      {"name": "cat", "type": "text"},
+      {"name": "h", "type": "select", "options": {"maxSelect": 1, "values": ["wide", "tall"]}},
+      {"name": "type", "type": "select", "options": {"maxSelect": 1, "values": ["image", "video"]}},
+      {"name": "videoUrl", "type": "url"},
+      {"name": "thumbnail", "type": "file", "options": {"maxSelect": 1, "mimeTypes": [], "thumbs": [], "maxSize": 5242880, "protected": false}},
+      {"name": "site_id", "type": "number", "required": true, "options": {"min": 1, "max": null, "noDecimal": true}}
+    ]
+  },
+  {
+    "name": "upcomings",
+    "type": "base",
+    "listRule": "",
+    "viewRule": "",
+    "schema": [
+      {"name": "day", "type": "text"},
+      {"name": "mon", "type": "text"},
+      {"name": "t", "type": "text"},
+      {"name": "p", "type": "text"},
+      {"name": "site_id", "type": "number", "required": true, "options": {"min": 1, "max": null, "noDecimal": true}}
+    ]
+  }
+]

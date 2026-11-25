@@ -15,7 +15,10 @@ useHead({ title: 'Million Laugh Entertainment | Making moments memorable' });
 const featured = projects.find((p) => p.featured)!;
 const homeWork = projects.filter((p) => p.home).slice(0, 5);
 const glassTints = ['glass--mint', 'glass--amber'];
-const defaultHeroBackground = '/images/lanka-t10-team.jpg';
+const activeCsrIndex = ref(0);
+const isCsrHovered = ref(false);
+const isCsrFocused = ref(false);
+const defaultHeroBackground = '/images/michael-jackson-event.jpeg';
 const autoHeroBackground = ref(defaultHeroBackground);
 const hoveredHeroBackground = ref<string | null>(null);
 const activeHeroBackground = computed(
@@ -29,17 +32,33 @@ const isHeroTrackMoving = ref(false);
 const isHeroTrackResetting = ref(false);
 let heroRotationTimer: number | undefined;
 let heroTrackTimer: number | undefined;
+let csrRotationTimer: number | undefined;
 onMounted(() => {
   void nextTick(updateHeroGalleryControls);
   window.addEventListener('resize', updateHeroGalleryControls);
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   heroRotationTimer = window.setInterval(advanceHeroCarousel, 5500);
+  csrRotationTimer = window.setInterval(advanceCsrAccordion, 5000);
 });
 onBeforeUnmount(() => {
   if (heroRotationTimer !== undefined) window.clearInterval(heroRotationTimer);
   if (heroTrackTimer !== undefined) window.clearTimeout(heroTrackTimer);
+  if (csrRotationTimer !== undefined) window.clearInterval(csrRotationTimer);
   window.removeEventListener('resize', updateHeroGalleryControls);
 });
+function advanceCsrAccordion() {
+  if (!csr.length || isCsrHovered.value || isCsrFocused.value) return;
+  activeCsrIndex.value = (activeCsrIndex.value + 1) % csr.length;
+}
+function resumeCsrRotationOnFocusLeave(event: FocusEvent) {
+  const accordion = event.currentTarget;
+  if (
+    accordion instanceof HTMLElement &&
+    !(event.relatedTarget instanceof Node && accordion.contains(event.relatedTarget))
+  ) {
+    isCsrFocused.value = false;
+  }
+}
 function updateHeroGalleryControls() {
   const gallery = heroGallery.value;
   if (!gallery) return;
@@ -69,46 +88,67 @@ function clearHeroBackgroundOnFocusLeave(event: FocusEvent) {
 }
 const heroCards = [
   {
-    eyebrow: 'Sports events',
-    title: 'Lanka T10',
-    src: '/images/lanka-t10-team.jpg',
-    alt: 'Teams and officials at the Lanka T10 Super League',
-    to: '/work/lanka-t10-super-league',
+    eyebrow: 'Live entertainment',
+    title: 'Michael Jackson Tribute Event',
+    src: '/images/michael-jackson-event.jpeg',
+    alt: 'Michael Jackson tribute performance at a live event',
+    to: '/work',
   },
   {
     eyebrow: 'Opening ceremonies',
-    title: 'A spectacular welcome',
-    src: '/images/fire-dancer.jpg',
-    alt: 'Fire dancer performing at a cricket tournament ceremony',
+    title: 'LPL 2026 Opening Ceremony',
+    src: '/images/lpl-2026-open-ceromony.jpg',
+    alt: 'Aerial view of the LPL 2026 Opening Ceremony at SSC Grounds',
+    to: '/work/lpl-2026-opening-ceremony',
+  },
+  {
+    eyebrow: 'Corporate awards',
+    title: 'SLIM National Sales Awards 2025',
+    src: '/images/slim-national-sales-awards.jpeg',
+    alt: 'SLIM National Sales Awards 2025 Guardians of Growth ceremony stage',
+    to: '/work',
+  },
+  {
+    eyebrow: 'Festivals',
+    title: 'Yaga Festival',
+    src: '/images/yaga-festival.jpeg',
+    alt: 'Yaga Festival live music and performances at Port City',
+    to: '/events',
+  },
+  {
+    eyebrow: 'Sports events',
+    title: 'T10 Player Draft',
+    src: '/images/t10-player-draft.jpg',
+    alt: 'Players at the T10 Player Draft',
+    to: '/work/lanka-t10-super-league',
+  },
+  {
+    eyebrow: 'Exhibitions',
+    title: 'National AI Expo',
+    src: '/images/national-ai-expo.jpg',
+    alt: 'Exhibition hall at the National AI Expo',
     to: '/work',
   },
   {
     eyebrow: 'Live productions',
-    title: 'On the big stage',
-    src: '/images/dancers-stage.jpg',
-    alt: 'Live dancers performing on an illuminated event stage',
+    title: 'Delmege Event',
+    src: '/images/delmege-event.jpg',
+    alt: 'Stage and audience at the Delmege corporate event',
+    to: '/work',
+  },
+  {
+    eyebrow: 'Awards ceremonies',
+    title: 'National Sales Awards',
+    src: '/images/national-sales-awards.jpg',
+    alt: 'Stage at the National Sales Awards ceremony',
     to: '/work',
   },
   {
     eyebrow: 'Brand experiences',
-    title: 'Product launches',
-    src: '/images/iphone-launch.jpg',
-    alt: 'SLT-MOBITEL iPhone 16 Pro launch installation',
-    to: '/work/iphone-16-pro-launch',
-  },
-  {
-    eyebrow: 'City installations',
-    title: 'Colombo at Christmas',
-    src: '/images/christmas-colombo.jpg',
-    alt: 'Illuminated Christmas installation in Colombo',
-    to: '/work/christmas-colombo-city',
-  },
-  {
-    eyebrow: 'Corporate events',
-    title: 'Saudi National Day',
-    src: '/images/saudi-national-day.jpg',
-    alt: 'Dignitaries on stage at the Saudi National Day reception',
-    to: '/work/saudi-national-day',
+    title: 'SLIM Brands Excellence',
+    src: '/images/slim-brands-excellence.jpg',
+    alt: 'SLIM Brands Excellence awards evening',
+    to: '/work',
   },
 ];
 const displayedHeroCards = ref([...heroCards]);
@@ -398,14 +438,14 @@ function advanceHeroCarousel() {
             <b>{{ e.day }}</b>
             <small>{{ e.mon }}</small>
           </div>
-          <div>
+          <div class="ev-body">
             <div class="t">{{ e.t }}</div>
             <div class="p">{{ e.p }}</div>
           </div>
-          <span class="link">Event details →</span>
+          <span class="link ev-link">Event details →</span>
         </NuxtLink>
       </div>
-      <p class="body" style="margin-top: 12px"><span class="badge">Demo dates</span></p>
+      <p class="body" style="margin-top: 12px">Join us at upcoming events across Sri Lanka.</p>
     </section>
 
     <section class="wrap section">
@@ -436,11 +476,8 @@ function advanceHeroCarousel() {
     </section>
 
     <section class="wrap section">
-      <div class="split" style="align-items: start">
+      <div class="split">
         <div>
-          <div class="photo" style="margin-bottom: 24px">
-            <img src="/images/crowd.jpg" alt="Crowd at a live event" loading="lazy" />
-          </div>
           <span v-reveal class="eyebrow">Our team</span>
           <h2 v-reveal class="h2" style="margin: 10px 0 12px">One team, one vision</h2>
           <p class="lead" style="margin-bottom: 14px">
@@ -449,28 +486,72 @@ function advanceHeroCarousel() {
           </p>
           <NuxtLink to="/about" class="link">Meet the team →</NuxtLink>
         </div>
-        <div>
-          <span v-reveal class="eyebrow">Corporate social responsibility</span>
-          <h2 v-reveal class="h2" style="margin: 10px 0 12px">
-            For people, for planet, for the future
-          </h2>
-          <p class="lead">
-            We commit more than LKR 2 million every year to community and environmental work.
-          </p>
-          <div class="pills">
-            <div
-              v-for="(c, i) in csr"
-              :key="c.t"
-              :class="['pill-row', 'glass', glassTints[i % glassTints.length]]"
-              v-reveal="i"
-            >
-              <b>{{ c.t }}</b>
-              <span>{{ c.s }}</span>
-            </div>
-          </div>
-          <NuxtLink to="/csr" class="link">Read about our CSR work →</NuxtLink>
+        <div class="photo">
+          <img src="/images/million-laugh-team.png" alt="The Million Laugh team" loading="lazy" />
         </div>
       </div>
+    </section>
+
+    <section class="wrap section">
+      <div v-reveal class="csr-intro">
+        <span class="eyebrow">Corporate social responsibility</span>
+        <h2 class="h2" style="margin: 10px 0 12px">For people, for planet, for the future</h2>
+        <p class="lead">
+          We commit more than LKR 2 million every year to community and environmental work.
+        </p>
+      </div>
+      <div
+        class="csr-accordion"
+        role="group"
+        aria-label="Our CSR initiatives"
+        @mouseenter="isCsrHovered = true"
+        @mouseleave="isCsrHovered = false"
+        @focusin="isCsrFocused = true"
+        @focusout="resumeCsrRotationOnFocusLeave"
+      >
+        <article
+          v-for="(c, i) in csr"
+          :key="c.t"
+          :class="['csr-accordion-card', { 'is-active': activeCsrIndex === i }]"
+        >
+          <button
+            :id="`csr-trigger-${i}`"
+            class="csr-accordion-trigger"
+            type="button"
+            :aria-expanded="activeCsrIndex === i"
+            :aria-controls="`csr-panel-${i}`"
+            @click="activeCsrIndex = activeCsrIndex === i ? -1 : i"
+          >
+            <span class="csr-accordion-number">{{ c.n }}</span>
+            <span class="csr-accordion-title">{{ c.t }}</span>
+            <img
+              v-if="activeCsrIndex !== i"
+              class="csr-accordion-thumb"
+              :src="c.src"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
+            <span class="csr-accordion-icon" aria-hidden="true">
+              {{ activeCsrIndex === i ? '−' : '+' }}
+            </span>
+          </button>
+          <div
+            :id="`csr-panel-${i}`"
+            class="csr-accordion-panel"
+            role="region"
+            :aria-labelledby="`csr-trigger-${i}`"
+            :aria-hidden="activeCsrIndex !== i"
+          >
+            <img :src="c.src" :alt="`${c.t} initiative`" loading="lazy" />
+            <div class="csr-accordion-copy">
+              <p class="csr-accordion-summary">{{ c.s }}</p>
+              <p class="body">{{ c.d }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <NuxtLink to="/csr" class="link csr-link">Read about our CSR work →</NuxtLink>
     </section>
 
     <section class="wrap section">

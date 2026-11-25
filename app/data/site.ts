@@ -5,7 +5,7 @@ export const contact = {
   address: '350 Makola Road, Kiribathgoda, Sri Lanka',
   email: 'info@millionlaugh.com',
   phone: '+94 112 910 677',
-  whatsapp: '[WHATSAPP NUMBER]',
+  whatsapp: '0755915242',
 };
 
 export const nav = [
@@ -66,6 +66,7 @@ export interface Project {
   meta: { k: string; v: string }[];
   featured?: boolean;
   home?: boolean;
+  content?: { type: 'text' | 'list', body: string | string[] }[];
 }
 
 export const projects: Project[] = [
@@ -77,6 +78,14 @@ export const projects: Project[] = [
     t: 'Lanka Premier League 2026 Opening Ceremony',
     d: 'A drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle at the SSC Grounds, Colombo.',
     long: "Million Laugh served as Official Event Partner for the Lanka Premier League 2026 Opening Ceremony, bringing world-class entertainment to Sri Lanka's premier T20 cricket tournament. Held at the SSC Grounds, Colombo, on 17 July 2026, the ceremony was built around a drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle that celebrated Sri Lanka's heritage on one stage. The evening was carried by live performances from Yohani, Centigradz, Sanka and Naadro, with innovation, creativity and flawless execution behind every moment.",
+    content: [
+      { type: 'text', body: "Million Laugh Entertainment (Pvt) Ltd is proud to serve as the Official Event Partner for the Lanka Premier League (LPL) 2026 Opening Ceremony, promising an unforgettable evening where world-class entertainment meets the excitement of Sri Lanka's premier T20 cricket tournament." },
+      { type: 'text', body: "Taking place at the SSC Grounds, Colombo, this spectacular opening ceremony has been designed to deliver an extraordinary experience for cricket fans and entertainment lovers alike. The event will feature a breathtaking drone show, a dazzling light show, the highly anticipated LPL Grand Trophy Reveal, and a vibrant cultural spectacle that celebrates Sri Lanka's rich heritage on one grand stage." },
+      { type: 'text', body: "The evening will come alive with electrifying performances by some of Sri Lanka's most celebrated artists and bands, including Yohani, Centigradz, Sanka, and Naadro, along with many more exciting entertainment acts that will keep the audience engaged throughout the night." },
+      { type: 'text', body: "As the Official Event Partner, Million Laugh Entertainment is committed to delivering an event that combines innovation, creativity, and flawless execution, creating a memorable opening celebration worthy of one of the region's biggest cricket leagues." },
+      { type: 'text', body: "Whether you're attending for the cricket, the music, the spectacular visuals, or the unforgettable atmosphere, the LPL 2026 Opening Ceremony promises to be one of the year's most anticipated entertainment events." },
+      { type: 'list', body: ["Spectacular Drone Show", "World-Class Light Show", "Grand LPL Trophy Reveal", "Vibrant Cultural Spectacle", "Live performances by Yohani, Centigradz, Sanka, Naadro, and other popular artists", "High-energy live band performances", "Immersive entertainment experience and many more surprises"] }
+    ],
     src: IMG('lpl-2026-open-ceromony'),
     alt: 'Aerial view of a night concert stage',
     meta: [
@@ -376,25 +385,55 @@ export const clients = [
 
 // Demo dates for the prototype
 export const upcoming = [
-  { day: '12', mon: 'Dec', t: 'Yaga Festival', p: 'Port City · 12 Dec 2026 · 6 pm to 10 pm' },
+  {
+    day: '12',
+    mon: 'Dec',
+    t: 'Yaga Festival',
+    p: 'Port City · 12 Dec 2026 · 6 pm to 10 pm',
+    details:
+      'Celebrate an evening of live music, vibrant performances and festival energy by the waterfront. Bring your friends and enjoy a memorable night at Port City.',
+    src: IMG('aerial-concert'),
+    alt: 'Aerial view of a live concert crowd',
+  },
   {
     day: '19',
     mon: 'Dec',
     t: 'SLT Mobitel Akasa Container Product Forum',
     p: 'Monarch Imperial · 19 Dec 2026 · 6 pm to 10 pm',
+    details:
+      'An evening forum bringing guests together to discover the Akasa container product, connect with industry professionals and enjoy a hosted programme at Monarch Imperial.',
+    src: IMG('stage-avaya'),
+    alt: 'Stage setup for a corporate product event',
   },
-  { day: '15', mon: 'Jan', t: 'Smartphone Launch', p: 'Lotus Tower · 15 Jan 2027 · 7 pm to 10 pm' },
+  {
+    day: '15',
+    mon: 'Jan',
+    t: 'Smartphone Launch',
+    p: 'Lotus Tower · 15 Jan 2027 · 7 pm to 10 pm',
+    details:
+      'Join us at Lotus Tower for an evening unveiling a new smartphone. The launch experience features product reveals, live demonstrations and entertainment.',
+    src: IMG('iphone-launch'),
+    alt: 'Smartphone displayed at a product launch',
+  },
   {
     day: '05',
     mon: 'Feb',
     t: 'Sri Lanka vs Australia One Day Series',
     p: 'R. Premadasa International Cricket Stadium · 5 to 7 Feb 2027',
+    details:
+      'Experience the excitement of international one-day cricket in Colombo. Match-day entertainment and a lively stadium atmosphere make this a celebration for fans.',
+    src: IMG('lanka-t10-team'),
+    alt: 'Cricket teams gathered on the field',
   },
   {
     day: '13',
     mon: 'Feb',
     t: 'SLIM Effie Awards Ceremony',
     p: 'Monarch Imperial · 13 Feb 2027 · 6 pm to 11 pm',
+    details:
+      'Celebrate Sri Lanka’s most effective marketing campaigns at an awards evening recognising creativity, strategy and measurable impact.',
+    src: IMG('galactic-night'),
+    alt: 'Awards ceremony stage illuminated with lights',
   },
 ];
 
