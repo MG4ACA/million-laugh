@@ -20,10 +20,14 @@ const isCsrHovered = ref(false);
 const isCsrFocused = ref(false);
 const homeContactTints = ['glass--mint', 'glass--mint', 'glass--mint', 'glass--amber'];
 const homeContactInfo = [
-  { k: 'Visit', v: contact.address, href: `https://www.google.com/maps?q=${encodeURIComponent(contact.address)}` },
+  {
+    k: 'Visit',
+    v: contact.address,
+    href: `https://www.google.com/maps?q=${encodeURIComponent(contact.address)}`,
+  },
   { k: 'Email', v: contact.email, href: `mailto:${contact.email}` },
   { k: 'Call', v: contact.phone, href: `tel:${contact.phone.replace(/\s/g, '')}` },
-  { k: 'WhatsApp', v: contact.whatsapp, href: `https://wa.me/${contact.whatsapp}` },
+  { k: 'WhatsApp', v: contact.whatsapp, href: `https://wa.me/${contact.whatsapp.replace(/\D/g, '')}` },
 ];
 const defaultHeroBackground = '/images/michael-jackson-event.jpeg';
 const autoHeroBackground = ref(defaultHeroBackground);
@@ -539,9 +543,6 @@ function advanceHeroCarousel() {
               aria-hidden="true"
               loading="lazy"
             />
-            <span class="csr-accordion-icon" aria-hidden="true">
-              {{ activeCsrIndex === i ? '−' : '+' }}
-            </span>
           </button>
           <div
             :id="`csr-panel-${i}`"

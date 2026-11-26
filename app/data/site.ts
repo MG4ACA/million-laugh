@@ -5,7 +5,7 @@ export const contact = {
   address: '350 Makola Road, Kiribathgoda, Sri Lanka',
   email: 'info@millionlaugh.com',
   phone: '+94 112 910 677',
-  whatsapp: '0755915242',
+  whatsapp: '94755915242',
 };
 
 export const nav = [
@@ -66,7 +66,7 @@ export interface Project {
   meta: { k: string; v: string }[];
   featured?: boolean;
   home?: boolean;
-  content?: { type: 'text' | 'list', body: string | string[] }[];
+  content?: { type: 'text' | 'list'; body: string | string[] }[];
 }
 
 export const projects: Project[] = [
@@ -79,12 +79,38 @@ export const projects: Project[] = [
     d: 'A drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle at the SSC Grounds, Colombo.',
     long: "Million Laugh served as Official Event Partner for the Lanka Premier League 2026 Opening Ceremony, bringing world-class entertainment to Sri Lanka's premier T20 cricket tournament. Held at the SSC Grounds, Colombo, on 17 July 2026, the ceremony was built around a drone show, a light show, the LPL Grand Trophy reveal and a cultural spectacle that celebrated Sri Lanka's heritage on one stage. The evening was carried by live performances from Yohani, Centigradz, Sanka and Naadro, with innovation, creativity and flawless execution behind every moment.",
     content: [
-      { type: 'text', body: "Million Laugh Entertainment (Pvt) Ltd is proud to serve as the Official Event Partner for the Lanka Premier League (LPL) 2026 Opening Ceremony, promising an unforgettable evening where world-class entertainment meets the excitement of Sri Lanka's premier T20 cricket tournament." },
-      { type: 'text', body: "Taking place at the SSC Grounds, Colombo, this spectacular opening ceremony has been designed to deliver an extraordinary experience for cricket fans and entertainment lovers alike. The event will feature a breathtaking drone show, a dazzling light show, the highly anticipated LPL Grand Trophy Reveal, and a vibrant cultural spectacle that celebrates Sri Lanka's rich heritage on one grand stage." },
-      { type: 'text', body: "The evening will come alive with electrifying performances by some of Sri Lanka's most celebrated artists and bands, including Yohani, Centigradz, Sanka, and Naadro, along with many more exciting entertainment acts that will keep the audience engaged throughout the night." },
-      { type: 'text', body: "As the Official Event Partner, Million Laugh Entertainment is committed to delivering an event that combines innovation, creativity, and flawless execution, creating a memorable opening celebration worthy of one of the region's biggest cricket leagues." },
-      { type: 'text', body: "Whether you're attending for the cricket, the music, the spectacular visuals, or the unforgettable atmosphere, the LPL 2026 Opening Ceremony promises to be one of the year's most anticipated entertainment events." },
-      { type: 'list', body: ["Spectacular Drone Show", "World-Class Light Show", "Grand LPL Trophy Reveal", "Vibrant Cultural Spectacle", "Live performances by Yohani, Centigradz, Sanka, Naadro, and other popular artists", "High-energy live band performances", "Immersive entertainment experience and many more surprises"] }
+      {
+        type: 'text',
+        body: "Million Laugh Entertainment (Pvt) Ltd is proud to serve as the Official Event Partner for the Lanka Premier League (LPL) 2026 Opening Ceremony, promising an unforgettable evening where world-class entertainment meets the excitement of Sri Lanka's premier T20 cricket tournament.",
+      },
+      {
+        type: 'text',
+        body: "Taking place at the SSC Grounds, Colombo, this spectacular opening ceremony has been designed to deliver an extraordinary experience for cricket fans and entertainment lovers alike. The event will feature a breathtaking drone show, a dazzling light show, the highly anticipated LPL Grand Trophy Reveal, and a vibrant cultural spectacle that celebrates Sri Lanka's rich heritage on one grand stage.",
+      },
+      {
+        type: 'text',
+        body: "The evening will come alive with electrifying performances by some of Sri Lanka's most celebrated artists and bands, including Yohani, Centigradz, Sanka, and Naadro, along with many more exciting entertainment acts that will keep the audience engaged throughout the night.",
+      },
+      {
+        type: 'text',
+        body: "As the Official Event Partner, Million Laugh Entertainment is committed to delivering an event that combines innovation, creativity, and flawless execution, creating a memorable opening celebration worthy of one of the region's biggest cricket leagues.",
+      },
+      {
+        type: 'text',
+        body: "Whether you're attending for the cricket, the music, the spectacular visuals, or the unforgettable atmosphere, the LPL 2026 Opening Ceremony promises to be one of the year's most anticipated entertainment events.",
+      },
+      {
+        type: 'list',
+        body: [
+          'Spectacular Drone Show',
+          'World-Class Light Show',
+          'Grand LPL Trophy Reveal',
+          'Vibrant Cultural Spectacle',
+          'Live performances by Yohani, Centigradz, Sanka, Naadro, and other popular artists',
+          'High-energy live band performances',
+          'Immersive entertainment experience and many more surprises',
+        ],
+      },
     ],
     src: IMG('lpl-2026-open-ceromony'),
     alt: 'Aerial view of a night concert stage',
@@ -178,7 +204,7 @@ export const projects: Project[] = [
     d: "Behind-the-scenes event management across the tournament, and the opening-ceremony performance of Sri Lanka's national anthem in Guwahati.",
     long: "Behind-the-scenes event management across the tournament and the opening-ceremony performance of Sri Lanka's national anthem by Nuwandhika Senaratne in Guwahati.",
     src: IMG('icc-womens-world-cup-2025'),
-    alt: 'ICC Women\'s Cricket World Cup 2025',
+    alt: "ICC Women's Cricket World Cup 2025",
     meta: [
       { k: 'Category', v: 'Sports' },
       { k: 'Date', v: 'Oct 2025' },
@@ -470,35 +496,35 @@ export const csr = [
     t: 'Education',
     s: 'Rural schools, scholarships and mentoring.',
     d: 'Funding rural schools so children receive a quality education, and supporting university students through scholarships and mentorship programs.',
-    src: IMG('rowing'),
+    src: IMG('csr-education'),
   },
   {
     n: '02',
     t: 'Health',
     s: 'Expectant mothers and hospital care.',
     d: 'Care for expectant mothers, and donations to hospitals that enhance patient care and save lives.',
-    src: IMG('lanka-t10-team'),
+    src: IMG('csr-health'),
   },
   {
     n: '03',
     t: 'Community',
     s: 'Religious communities and families in hardship.',
     d: 'Support for religious communities to promote harmony, and for families through times of hardship.',
-    src: IMG('fire-dancer'),
+    src: IMG('csr-community'),
   },
   {
     n: '04',
     t: 'Relief',
     s: 'Emergency help after disasters.',
     d: 'Emergency relief and support for communities affected by disasters.',
-    src: IMG('crowd'),
+    src: IMG('csr-relief'),
   },
   {
     n: '05',
     t: 'Environment',
     s: 'Less waste, more sustainable practice.',
     d: 'Environmentally friendly practices across our operations and projects, reducing waste and promoting sustainable solutions.',
-    src: IMG('christmas-colombo'),
+    src: IMG('csr-environment'),
   },
 ];
 
