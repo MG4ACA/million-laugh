@@ -205,11 +205,6 @@ function advanceHeroCarousel() {
 <template>
   <div>
     <div class="backdrop home-hero-shell">
-      <div class="blob a" aria-hidden="true" />
-      <div class="blob b" aria-hidden="true" />
-      <div class="blob c" aria-hidden="true" />
-      <div class="blob d" aria-hidden="true" />
-      <div class="blob e" aria-hidden="true" />
       <Transition name="hero-background">
         <img
           v-if="activeHeroBackground !== defaultHeroBackground"
