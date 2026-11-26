@@ -692,6 +692,7 @@ a.link:hover {
   min-height: min(900px, 100svh);
   color: #fff;
   background: #102b2b;
+  overflow: hidden;
 }
 .home-hero-shell::before {
   position: absolute;
@@ -716,6 +717,7 @@ a.link:hover {
   content: '';
   pointer-events: none;
   background: linear-gradient(0deg, rgba(5, 23, 24, 0.48), rgba(5, 23, 24, 0.08) 80%);
+  height: 100%;
 }
 .hero-background-swap {
   position: absolute;
@@ -740,6 +742,7 @@ a.link:hover {
   display: flex;
   min-height: min(900px, 100svh);
   flex-direction: column;
+  overflow: hidden;
 }
 .home-hero-shell .blob {
   display: none;
@@ -805,6 +808,7 @@ a.link:hover {
 }
 .hero-gallery-wrap {
   min-width: 0;
+  margin-left: 200px;
 }
 .hero-gallery-controls {
   display: flex;
@@ -992,7 +996,7 @@ a.link:hover {
 @media (max-width: 760px) {
   .home-hero-shell,
   .home-hero-shell > .rel {
-    min-height: 75svh;
+    min-height: 90svh;
   }
   .home-hero-shell::before {
     background:
@@ -1011,13 +1015,16 @@ a.link:hover {
     object-position: 54% center;
   }
   .hero--immersive {
-    min-height: auto;
-    grid-template-columns: 1fr;
+    min-height: 95svh;
     gap: 22px;
     padding-top: clamp(44px, 8vh, 72px);
-    padding-bottom: 32px;
+    padding-bottom: clamp(40px, 6vh, 60px);
     padding-left: clamp(16px, 4vw, 24px);
     padding-right: clamp(16px, 4vw, 24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
   }
   .hero-content {
     max-width: none;
@@ -1032,6 +1039,7 @@ a.link:hover {
     font-size: 11px;
     padding: 7px 12px;
     margin-bottom: 14px;
+    display: none;
   }
   .hero--immersive .hero-copy {
     font-size: clamp(14px, 3.6vw, 16px);
@@ -1060,33 +1068,64 @@ a.link:hover {
   .hero-gallery-wrap {
     padding: 0 clamp(12px, 3vw, 20px);
   }
+  /* Hide arrows on mobile since cards are hidden */
   .hero-gallery-controls {
-    margin-bottom: 6px;
-    justify-content: center;
+    display: none;
   }
   .hero-gallery {
-    padding: 6px 4px 10px;
-    margin-right: 0;
-    padding-left: 2px;
+    display: none;
   }
+  /* Hide hero cards on mobile but keep them in DOM for carousel logic */
   .hero-card {
-    flex-basis: clamp(140px, 38vw, 180px);
-    height: clamp(160px, 24vh, 200px);
-    border-radius: 18px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
   }
-  .hero-card-title {
-    font-size: 17px;
+  .hero-gallery-track {
+    visibility: hidden;
   }
-  .hero-card-copy {
-    padding: clamp(10px, 1.4vw, 16px);
+}
+
+/* Mobile scrollbar styling - transparent track with theme green thumb */
+@media (max-width: 760px) {
+  html,
+  body {
+    scrollbar-color: var(--mint) transparent;
+    scrollbar-width: thin;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--mint);
+    border-radius: 3px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--teal);
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
   }
 }
 
 @media (max-width: 480px) {
-  .home-hero-shell,
-  .home-hero-shell > .rel {
-    min-height: 70svh;
-  }
   .hero--immersive {
     padding-top: clamp(36px, 7vh, 64px);
     padding-bottom: 24px;
@@ -1096,10 +1135,6 @@ a.link:hover {
   }
   .hero--immersive .hero-copy {
     font-size: clamp(13px, 3.4vw, 15px);
-  }
-  .hero-card {
-    flex-basis: clamp(130px, 40vw, 160px);
-    height: clamp(150px, 22vh, 180px);
   }
 }
 .stats {
