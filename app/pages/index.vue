@@ -18,6 +18,13 @@ const glassTints = ['glass--mint', 'glass--amber'];
 const activeCsrIndex = ref(0);
 const isCsrHovered = ref(false);
 const isCsrFocused = ref(false);
+const homeContactTints = ['glass--mint', 'glass--mint', 'glass--mint', 'glass--amber'];
+const homeContactInfo = [
+  { k: 'Visit', v: contact.address, href: `https://www.google.com/maps?q=${encodeURIComponent(contact.address)}` },
+  { k: 'Email', v: contact.email, href: `mailto:${contact.email}` },
+  { k: 'Call', v: contact.phone, href: `tel:${contact.phone.replace(/\s/g, '')}` },
+  { k: 'WhatsApp', v: contact.whatsapp, href: `https://wa.me/${contact.whatsapp}` },
+];
 const defaultHeroBackground = '/images/michael-jackson-event.jpeg';
 const autoHeroBackground = ref(defaultHeroBackground);
 const hoveredHeroBackground = ref<string | null>(null);
@@ -569,29 +576,46 @@ function advanceHeroCarousel() {
       </div>
     </section>
 
-    <section class="wrap section">
-      <div class="split" style="align-items: start">
-        <div>
-          <span v-reveal class="eyebrow">Contact</span>
-          <h2 v-reveal class="h2" style="margin: 12px 0 14px">Tell us about your event</h2>
-          <p class="lead" style="margin-bottom: 22px">
-            Share the date, the guest count and the idea. We will reply with a plan and a quote.
-          </p>
-          <p class="body">
-            <strong>Visit</strong>
-            <br />
-            {{ contact.address }}
-            <br />
-            <strong>Email</strong>
-            <br />
-            {{ contact.email }}
-            <br />
-            <strong>Call</strong>
-            <br />
-            {{ contact.phone }}
-          </p>
+    <section class="wrap section home-contact-section">
+      <div class="home-contact-intro">
+        <span v-reveal class="eyebrow">Contact</span>
+        <h2 v-reveal class="h2" style="margin: 12px 0 14px">Tell us about your event</h2>
+        <p v-reveal class="lead">
+          Share the date, the guest count and the idea. We will reply with a plan and a quote.
+        </p>
+      </div>
+      <div class="home-contact-layout">
+        <div class="home-contact-left">
+          <div class="stack" style="gap: 12px">
+            <a
+              v-for="(item, index) in homeContactInfo"
+              :key="item.k"
+              :href="item.href"
+              :class="['info', 'glass', homeContactTints[index % homeContactTints.length]]"
+              v-reveal="index"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{{ item.k }}</span>
+              <b>{{ item.v }}</b>
+            </a>
+          </div>
+          <div v-reveal class="mapbox home-contact-map">
+            <iframe
+              :src="`https://www.google.com/maps?q=${encodeURIComponent(contact.address)}&output=embed`"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Million Laugh Entertainment location on Google Maps"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
-        <ContactForm />
+        <div class="home-contact-right">
+          <ContactForm full />
+        </div>
       </div>
     </section>
   </div>

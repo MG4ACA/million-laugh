@@ -1880,12 +1880,82 @@ a.link:hover {
   border-radius: 22px;
   background: #bfe3d6;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .mapbox iframe {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
+}
+.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: start;
+  margin-top: 24px;
+  align-items: stretch;
+}
+.left-col {
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.right-col {
+  flex: 2 1 460px;
+  min-width: 0;
+}
+
+.home-contact-intro {
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+.home-contact-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.92fr) minmax(0, 1.35fr);
+  gap: clamp(22px, 3vw, 38px);
+  align-items: stretch;
+}
+.home-contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+.home-contact-left .stack {
+  gap: 12px;
+}
+.home-contact-map {
+  flex: 1;
+  aspect-ratio: auto;
+  min-height: 260px;
+}
+.home-contact-right {
+  min-width: 0;
+}
+@media (max-width: 980px) {
+  .home-contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .home-contact-map {
+    aspect-ratio: 16/9;
+    min-height: auto;
+  }
+}
+@media (max-width: 640px) {
+  .home-contact-section {
+    padding: clamp(18px, 4vw, 28px);
+  }
+  .home-contact-left .stack {
+    gap: 10px;
+  }
+  .info {
+    padding: 12px 16px;
+  }
+  .info b {
+    font-size: 15px;
+  }
 }
 
 .spec {
