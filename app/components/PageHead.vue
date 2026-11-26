@@ -3,7 +3,6 @@ defineProps<{ chip: string }>()
 </script>
 <template>
   <div class="backdrop">
-    <div class="blob a" aria-hidden="true" /><div class="blob b" aria-hidden="true" /><div class="blob c" aria-hidden="true" /><div class="blob d" aria-hidden="true" /><div class="blob e" aria-hidden="true" />
     <div class="rel">
       <SiteHeader />
       <div class="wrap page-head">

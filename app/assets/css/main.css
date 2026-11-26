@@ -325,9 +325,18 @@ a.link:hover {
 .backdrop {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #d3efe4 0%, #e6f6ef 85%, var(--bg) 100%);
+  background: transparent;
 }
-.blob {
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #d3efe4 0%, #e6f6ef 85%, var(--bg) 100%);
+  z-index: -1;
+}
+
+.site-bg .blob {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
@@ -1548,6 +1557,17 @@ a.link:hover {
 .csr-link {
   display: inline-block;
   margin-top: 20px;
+}
+.csr-manifesto {
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  text-align: justify;
+}
+.csr-manifesto p {
+  line-height: 1.7;
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: var(--ink);
+  font-weight: 500;
 }
 @keyframes csr-panel-in {
   from {
