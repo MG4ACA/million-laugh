@@ -2,6 +2,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
+  
+  // Static site generation for VPS deployment
+  ssr: false,
+  nitro: {
+    preset: 'static'
+  },
+  
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
