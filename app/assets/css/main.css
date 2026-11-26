@@ -1513,20 +1513,7 @@ a.link:hover {
   border-radius: 8px;
   object-fit: cover;
 }
-.csr-accordion-icon {
-  display: grid;
-  grid-row: 1;
-  grid-column: 2;
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
-  place-items: center;
-  border: 1px solid var(--dark-line);
-  border-radius: 50%;
-  color: #fff;
-  font-size: 22px;
-  line-height: 1;
-}
+
 .csr-accordion-panel {
   display: none;
   flex: 1;
@@ -1536,7 +1523,7 @@ a.link:hover {
 }
 .csr-accordion-card.is-active .csr-accordion-panel {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) 190px;
+  grid-template-rows: minmax(0, 1fr) 130px;
   animation: csr-panel-in 420ms ease both;
 }
 .csr-accordion-panel img {
@@ -1547,8 +1534,8 @@ a.link:hover {
 }
 .csr-accordion-copy {
   display: grid;
-  gap: 8px;
-  padding: clamp(16px, 2vw, 24px);
+  gap: 1px;
+  padding: clamp(12px, 1.5vw, 20px);
 }
 .csr-accordion-summary {
   color: var(--ink);
@@ -1611,18 +1598,11 @@ a.link:hover {
     height: 40px;
     border-radius: 6px;
   }
-  .csr-accordion-icon {
-    grid-row: 1;
-    grid-column: 4;
-  }
   .csr-accordion-card.is-active .csr-accordion-panel {
     grid-template-rows: auto auto;
   }
   .csr-accordion-card.is-active .csr-accordion-trigger {
     grid-template-columns: 28px minmax(0, 1fr) 32px;
-  }
-  .csr-accordion-card.is-active .csr-accordion-icon {
-    grid-column: 3;
   }
   .csr-accordion-panel img {
     aspect-ratio: 16 / 9;

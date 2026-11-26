@@ -18,7 +18,7 @@ const getInfoLink = (key: string) => {
     case 'Call':
       return `tel:${contact.phone}`;
     case 'WhatsApp':
-      return `https://wa.me/${contact.whatsapp}`;
+      return `https://wa.me/${contact.whatsapp.replace(/\D/g, '')}`;
     default:
       return '#';
   }
