@@ -20,7 +20,6 @@ const sent = ref(false)
     <p v-if="sent" class="thanks" role="status">Thank you. This is a prototype, so nothing was sent.</p>
     <div class="actions">
       <button type="submit" class="btn btn-amber">Send enquiry</button>
-      <a class="link" href="#" @click.prevent>Or message us on WhatsApp →</a>
     </div>
   </form>
 </template>
