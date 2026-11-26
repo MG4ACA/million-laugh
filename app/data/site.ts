@@ -500,9 +500,9 @@ export const csr = [
   },
   {
     n: '02',
-    t: 'Health',
-    s: 'Expectant mothers and hospital care.',
-    d: 'Care for expectant mothers, and donations to hospitals that enhance patient care and save lives.',
+    t: 'Faith & Harmony',
+    s: 'Supporting religious communities and spiritual wellbeing.',
+    d: 'Supporting religious institutions and communities to promote interfaith harmony, preserve cultural heritage, and foster spiritual wellbeing across all faiths.',
     src: IMG('csr-health'),
   },
   {
@@ -638,12 +638,12 @@ export const mission = [
   {
     k: 'Our mission',
     t: 'To transform ideas into extraordinary experiences.',
-    d: 'We deliver innovative, world-class solutions in event management, brand activations and entertainment, while fostering a culture of creativity, integrity and family values.',
+    d: 'At Million Laugh Entertainment, our mission is to transform ideas into extraordinary experiences that inspire, connect, and leave lasting memories. We are dedicated to delivering innovative, world-class solutions in event management, brand activations, and entertainment, while fostering a culture of creativity, integrity, and family values. By empowering our talented team and building lasting relationships with our clients, we aim to set new standards of excellence and create meaningful impact locally and globally.',
   },
   {
     k: 'Our vision',
     t: 'A globally recognised leader in events and entertainment.',
-    d: 'We aim to set benchmarks for innovation, quality and customer satisfaction, and to bring the Million Laugh experience to audiences and brands around the world.',
+    d: 'Our vision is to become a globally recognized leader in the event and entertainment industry, setting benchmarks for innovation, quality, and customer satisfaction. We aspire to expand our reach beyond borders, bringing the Million Laugh Entertainment experience to audiences and brands around the world. Guided by our passion and commitment to excellence, we aim to create a legacy that inspires and connects people everywhere.',
   },
 ];
 
