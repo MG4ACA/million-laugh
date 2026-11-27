@@ -1695,7 +1695,7 @@ a.link:hover {
   .csr-accordion-trigger,
   .csr-accordion-card.is-active .csr-accordion-trigger {
     flex: none;
-    grid-template-columns: 28px minmax(0, 1fr) 52px 32px;
+    grid-template-columns: 28px minmax(0, 1fr) 52px 0px;
     grid-template-rows: 1fr;
     align-items: center;
     min-height: 68px;
@@ -1713,6 +1713,7 @@ a.link:hover {
     writing-mode: horizontal-tb;
     transform: none;
     font-size: 18px;
+    margin-top: 10px;
   }
   .csr-accordion-thumb {
     grid-row: 1;

@@ -5,7 +5,7 @@ export const contact = {
   address: '350 Makola Road, Kiribathgoda, Sri Lanka',
   email: 'info@millionlaugh.com',
   phone: '+94 112 910 677',
-  whatsapp: '94755915242',
+  whatsapp: '+94 71 247 7777 ',
 };
 
 export const nav = [
